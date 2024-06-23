@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+/* Track */
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+ 
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+ 
+/* Handle on hover */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #0a0a0a;
+}
+.perspective-1200{
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+}
+.red-ball{
+   background: radial-gradient(circle at 100px 100px, #c81e1e, #000)
+}
+.shadow-f{
+    filter: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+}
+.green-ball{
+    background: radial-gradient(circle at 100px 100px, #046c4e, #000)
+}
+.violet-ball{
+    background: radial-gradient(circle at 100px 100px, #6d28d9, #000)
+}
+.flip {
+	backface-visibility: visible !important;
+	animation: flip 2s ease infinite;
+}
+.bounce{
+    animation: Bounce .9s ease-in infinite;
+}
+
+.bounce:nth-child(2){
+    
+    animation-delay: .15s;
+}
+.bounce:nth-child(3){
+    
+    animation-delay: .25s;
+}
+@keyframes flip {
+	0% {
+		transform: perspective(800px) rotateY(0);
+		animation-timing-function: ease-out;
+	}
+	40% {
+		transform: perspective(800px) translateZ(150px) rotateY(170deg);
+		animation-timing-function: ease-out;
+	}
+	50% {
+		transform: perspective(800px) translateZ(150px) rotateY(190deg) scale(1);
+		animation-timing-function: ease-in;
+	}
+	80% {
+		transform: perspective(800px) rotateY(360deg) scale(.95);
+		animation-timing-function: ease-in;
+	}
+	100% {
+		transform: perspective(800px) scale(1);
+		animation-timing-function: ease-in;
+	}
+}
+
+@keyframes Bounce{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-155px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+.threed-button{
+    position:relative;
+    display:inline-block;
+    margin:20px;
+  }
+  
+  .threed-button a{
+    color:white;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:36px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#FFA12B;
+    display:block;
+    position:relative;
+    padding:20px 40px;
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  .threed-button a:active{
+    top:10px;
+    background-color:#F78900;
+    
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
+    box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+  }
+  
+  .threed-button:after{
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#2B1800;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+
+
+  .new_button {
+    position: relative;
+    padding: 0;
+    width: 140px;
+    height: 40px;
+    border: 3px solid #d0cfcf;
+    outline: none;
+
+    /* background-color: #ff1f1f; */
+    border-radius: 40px;
+    /* box-shadow: -6px -20px 35px #ffffff, -6px -10px 15px #ffffff, -20px 0px 30px #ffffff, 6px 20px 25px rgba(0, 0, 0, 0.2); */
+    transition: 0.13s ease-in-out;
+    cursor: pointer;
+  }
+  .new_button:active {
+    box-shadow: none !important;
+  }
+  .new_button:active .new_button__content {
+    box-shadow: none !important;
+  }
+  .new_button:active .new_button__content .new_button__text, .new_button:active .new_button__content .new_button__icon {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .new_button__content {
+    position: relative;
+    display: grid;
+    /* padding: 20px; */
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* box-shadow: inset 0px -8px 0px #AA0000, 0px -8px 0px #5a0101; */
+    border-radius: 40px;
+    transition: 0.13s ease-in-out;
+    z-index: 1;
+  }
+ 
+  .new_button__text {
+    position: relative;
+    transform: translate3d(0px, -4px, 0px);
+    margin: 0;
+    align-self: end;
+    grid-column: 1/5;
+    grid-row: 1;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #888888;
+    color: white;
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    transition: 0.13s ease-in-out;
+  }
+
+  :root {
+    --backgroundColor: rgba(246, 241, 209);
+    --colorShadeA: rgb(106, 163, 137);
+    --colorShadeB: rgb(121, 186, 156);
+    --colorShadeC: rgb(150, 232, 195);
+    --colorShadeD: rgb(187, 232, 211);
+    --colorShadeE: rgb(205, 255, 232);
+  }
+  
+
+
+
+
+  .big-button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--colorShadeA);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: inherit;
+  }
+  
+ .big-button {
+    padding: 1em ;
+    border: 2px solid var(--colorShadeA);
+    border-radius: 1em;
+    background: var(--colorShadeE);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+ .big-button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+  
+.big-button:hover:not(:active) {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.375em);
+  }
+  
+.big-button:hover:not(:active):before {
+    transform: translate3d(0, 0.75em, -1em);
+  }
+  
+.big-button:active {
+    transform: translate(0em, 0.75em);
+  }
+  
+.big-button:active::before {
+    transform: translate3d(0, 0, -1em);
+  
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+  }
