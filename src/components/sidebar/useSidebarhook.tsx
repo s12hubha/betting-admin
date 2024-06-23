@@ -28,10 +28,11 @@ const useSidebarhook = () => {
   }, [window.innerWidth]);
 
   const nestedMenuClick = (
-    ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    menu: INavMenu,
+    // ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    // menu: INavMenu,
     index: number
   ) => {
+   
     if (sidebarMenus?.length) {
       const arr = [...sidebarMenus];
       arr.forEach((m: INavMenu) => {
@@ -57,7 +58,8 @@ const useSidebarhook = () => {
                   isSideBarOpen ? "justify-start" : "justify-center"
                 } flex text-sm transition-all gap-3 items-center w-full`
               }
-              onClick={(e) => nestedMenuClick(e, menu, index)}
+              // onClick={(e) => nestedMenuClick(e, menu, index)}
+              onClick={(e) => nestedMenuClick( index)}
             >
               <div className="w-fit bg-white">
                 {Icon && <Icon color={menu?.opened?"#000":"#4b5563"} />}

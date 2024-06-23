@@ -1,12 +1,12 @@
 import { Table } from 'flowbite-react'
-import React from 'react'
+
 
 type Props = {
     columns:any[],
     data:unknown[]
 }
 
-const TableComponent = ({columns,data}: Props) => {
+const TableComponent = ({columns}: Props) => {
   return (
     <div> 
         <Table>

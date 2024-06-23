@@ -1,10 +1,10 @@
-import { UserRoles } from "../../models/enum";
-import { IJwtPayload, ILocalStorage, INavMenu, IUserDetails } from "../../models/interfaces/auth";
+
+import { ILocalStorage, INavMenu} from "../../models/interfaces/auth";
 import store from "../../redux/store/strore";
 import { Constants } from "../../shared/constants"
-import { removeUser, setUser } from "../../shared/slices/auth";
-import { jwtDecode } from "jwt-decode";
-import { menu, menus } from "../../utilis/nav-menu-util";
+import { removeUser} from "../../shared/slices/auth";
+
+import { menus } from "../../utilis/nav-menu-util";
 import SocketConnector from "../../socket-connection";
 export default class AuthService {
     static get key():string{
@@ -45,7 +45,7 @@ export default class AuthService {
       store.dispatch(removeUser())
       const socketInstance= SocketConnector.getInstance()
       socketInstance.disconnect()
-      await new Promise((res,rej)=>{
+      await new Promise((res)=>{
         res(true)
         setTimeout(()=>{
           navigate("/auth/login")
