@@ -1,4 +1,4 @@
-import { Button, Modal } from "flowbite-react";
+import {  Modal } from "flowbite-react";
 import { useAppDispatch, useAppSelector } from "../../redux/store/strore";
 import { closeModal } from "../../shared/slices/common";
 import ModalTypes from "../../utilis/modal-constant-util";
@@ -7,7 +7,7 @@ import TimedWinnerSelectPopup from "../../pages/private/Games/components/popup/T
 
 
 function ModalLayout() {
-  const { isOpen, bodyType, size, extraObject, title }:IModalProps = useAppSelector(
+  const { isOpen, bodyType, extraObject, title }:IModalProps = useAppSelector(
     (state) => state?.modal
   );
   const { MODAL_BODY_TYPES } = ModalTypes;

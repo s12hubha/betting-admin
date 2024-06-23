@@ -1,5 +1,4 @@
 import { Avatar, Dropdown, Navbar } from 'flowbite-react'
-import React from 'react'
 import { CommonUtils } from '../../utilis/common-utills'
 import AuthService from '../../core/service/auth.service'
 import { useNavigate } from 'react-router-dom'

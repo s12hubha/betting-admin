@@ -12,7 +12,7 @@ const GameTimer = ({startTimer,setStartTimer,time}: Props) => {
 
 console.log({time})
   React.useEffect(() => {
-    let timerId:any;
+    let timerId: string | number | NodeJS.Timeout | undefined;
 
     if (startTimer) {
       setCountDown(60 * time);
@@ -35,8 +35,8 @@ console.log({time})
   }, [countDown, startTimer]);
 
 
-  const seconds = String(countDown % 60).padStart(2, 0);
-  const minutes = String(Math.floor(countDown / 60)).padStart(2, 0);
+  const seconds = String(countDown % 60).padStart(2, "0");
+  const minutes = String(Math.floor(countDown / 60)).padStart(2,"0");
   return (
     <div>
       <div>
